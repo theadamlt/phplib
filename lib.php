@@ -27,7 +27,7 @@ if (defined('ENVIRONMENT'))
 	}
 }
 
-function mysql_con ($host, $user, $password, $dbname)	{
+function mysql_con($host, $user, $password, $dbname)	{
 	global $con;
 	$con = mysql_connect($host, $user, $password);
 	if (!$con)	{
@@ -42,7 +42,7 @@ function mysql_con ($host, $user, $password, $dbname)	{
 
 }
 
-function localhost_con ($dbname) {
+function localhost_con($dbname) {
 	global $con;
 	$con = mysql_connect("localhost", "root", "");
 		if (!$con)	{
@@ -53,5 +53,14 @@ function localhost_con ($dbname) {
 		if (!$con_db) {
 		die ("Could not select database ".$dbname." ".mysql_error());
 	}
+}
+
+function getRemoteaddr()	{
+	$ip = $_SERVER[REMOTE_ADDR];
+	return $ip;
+}
+function getUserAgent()	{
+	$useragent = $_SERVER ['HTTP_USER_AGENT'];
+    return $useragent;
 }
 ?>
