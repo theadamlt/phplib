@@ -61,6 +61,11 @@ function getRemoteaddr()	{
 }
 function getUserAgent()	{
 	$useragent = $_SERVER ['HTTP_USER_AGENT'];
-    return $useragent;
+   	 return $useragent;
+}
+
+function mysql_fix_string($string)	{
+	if (get_magic_quotes_gpc()) $string stripslashes($string);
+	return mysql_real_escape_string($string);
 }
 ?>
