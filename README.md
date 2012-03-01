@@ -14,3 +14,12 @@ PHP Library containing functions that i use regularly.
 		Creates a global variable $con_db containing the database selection.
 		If any of those variables returns false, it will die(), echo an error-message and the mysql_error();
 
+###odOrEven()###
+	Function to estimate if a number is odd or even.
+	Takes 1 parameter, the actual number.
+	Returns 0 of the number is odd.
+	Return 1 if the number is even
+
+######
+
+
