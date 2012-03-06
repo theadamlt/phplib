@@ -66,8 +66,27 @@ function mysql_enteries_fix_string($string) {
 
 function oddOrEven($num)
 {
-if($odd = $num%2 ) return(0); //Odd number
-else return(1); //Even number
+	if($odd = $num%2 ) return(0); //Odd number
+	else return(1); //Even number
+}
+
+function getBrowser()
+{
+	if(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) 
+		$browser = 'Internet explorer';
+
+	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== FALSE) 
+		$browser = 'Firefox';
+		
+	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') !== FALSE) 
+		$browser = 'Chrome';
+
+	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== FALSE)
+		$browser = 'Opera';
+	else
+		$browser = 'Undefined';
+
+	return $browser;
 }
 
 $salt1 = "/*5t12?";

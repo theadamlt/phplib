@@ -15,11 +15,19 @@ PHP Library containing functions that i use regularly.
 		If any of those variables returns false, it will die(), echo an error-message and the mysql_error();
 
 ###odOrEven()###
-	Function to estimate if a number is odd or even.
+	Function to find out if a number is odd or even.
 	Takes 1 parameter, the actual number.
 	Returns 0 of the number is odd.
 	Return 1 if the number is even
 
-######
+###getBrowser()###
+	Functions takes 0 parameters.
+	Return a string with the Browser name.
+	Google Chrome: Chrome
+	Mozilla Firefox: Firefox
+	MS Internet Explorer: Internet explorer
+	Opera: Opera
+	If  browser notrecognized: Undefined.
 
+	Will add more browsers
 
