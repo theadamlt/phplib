@@ -83,6 +83,28 @@ function getBrowser()
 
 	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== FALSE)
 		$browser = 'Opera';
+
+	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== FALSE)
+		$browser = 'Safari';
+
+	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'SeaMonkey') !== FALSE)
+		$browser = 'SeaMonkey';
+
+	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Flock') !== FALSE)
+		$browser = 'Flock';
+
+	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Prism') !== FALSE)
+		$browser = 'Prism';
+
+	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Deepnet Explorer') !== FALSE)
+		$browser = 'Deepnet Explorer';
+
+	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Maxthon') !== FALSE)
+		$browser = 'Maxthon';
+
+	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'SeaMonkey') !== FALSE)
+		$browser = 'SeaMonkey';
+
 	else
 		$browser = 'Undefined';
 
