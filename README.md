@@ -14,20 +14,23 @@ PHP Library containing functions that i use regularly.
 		Creates a global variable $con_db containing the database selection.
 		If any of those variables returns false, it will die(), echo an error-message and the mysql_error();
 
-###odOrEven()###
+###odd_or_even()###
 	Function to find out if a number is odd or even.
 	Takes 1 parameter, the actual number.
 	Returns 0 of the number is odd.
 	Return 1 if the number is even
 
-###getBrowser()###
+###detect_browser()###
 	Functions takes 0 parameters.
 	Return a string with the Browser name.
-	Google Chrome: Chrome
-	Mozilla Firefox: Firefox
-	MS Internet Explorer: Internet explorer
-	Opera: Opera
 	If  browser notrecognized: Undefined.
 
-	Will add more browsers
+###detect_mobile_browser()###
+	Functions takes 0 parameters.
+	Returns true if useragent is mobile.
+	Else, returns false.
+
+###calc_file_size()###
+	Function takes 1 parameter, the filesize variable.
+	Returns the filesize, in the suitable unit, up to Terabyte, with 1 decimal.
 
