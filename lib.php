@@ -72,39 +72,74 @@ function odd_or_even($num)
 
 function detect_browser()
 {
-	if(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE')) 
+	$useragent = $_SERVER['HTTP_USER_AGENT'];
+
+	if(strpos($useragent, 'MSIE')) 
 		$browser = 'Internet explorer';
 
-	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox')) 
+	elseif(strpos($useragent, 'Firefox')) 
 		$browser = 'Firefox';
 		
-	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome')) 
-		$browser = 'Chrome';
+	elseif(strpos($useragent, 'Chrome')) 
+		$browser = 'Google Chrome';
 
-	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera'))
+	elseif(strpos($useragent, 'Opera'))
 		$browser = 'Opera';
 
-	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Safari'))
+	elseif(strpos($useragent, 'Safari'))
 		$browser = 'Safari';
 
-	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'SeaMonkey'))
+	elseif(strpos($useragent, 'SeaMonkey'))
 		$browser = 'SeaMonkey';
 
-	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Flock'))
+	elseif(strpos($useragent, 'Flock'))
 		$browser = 'Flock';
 
-	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Prism'))
+	elseif(strpos($useragent, 'Prism'))
 		$browser = 'Prism';
 
-	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Deepnet Explorer'))
+	elseif(strpos($useragent, 'Deepnet Explorer'))
 		$browser = 'Deepnet Explorer';
 
-	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Maxthon'))
+	elseif(strpos($useragent, 'Maxthon'))
 		$browser = 'Maxthon';
-
-	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'SeaMonkey'))
-		$browser = 'SeaMonkey';
 	
+	elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Avant'))
+		$browser = 'Avant';
+
+	elseif(strpos($useragent, 'Camino'))
+		$browser = 'Camino';
+
+	elseif(strpos($useragent, 'Shiira'))
+		$browser = 'Shiira';
+
+	elseif(strpos($useragent, 'OmniWeb'))
+		$browser = 'OmniWeb';
+
+	elseif(strpos($useragent, 'iCab'))
+		$browser = 'iCab';
+
+	elseif(strpos($useragent, 'Stainless'))
+		$browser = 'Stainless';
+
+	elseif(strpos($useragent, 'Fluid'))
+		$browser = 'Fluid';
+
+	elseif(strpos($useragent, 'Konqueror'))
+		$browser = 'Konqueror';
+
+	elseif(strpos($useragent, 'Galeon'))
+		$browser = 'Galeon';
+
+	elseif(strpos($useragent, 'Epiphany'))
+		$browser = 'Epiphany';
+
+	elseif(strpos($useragent, 'Swiftfox'))
+		$browser = 'Swiftfox';
+
+	elseif(strpos($useragent, 'Swiftweasel'))
+		$browser = 'Swiftweasel';
+
 	else
 		$browser = 'Undefined';
 
@@ -125,8 +160,8 @@ function calc_file_size($file)
 	
 	global $kb, $mb, $gb, $tb;
 	if($file >= $kb && $file < $mb) $size = round($file/$kb, 1).' Kb';
-	elseif($file >= $mb && $file < $gb) $size = round($file/$mb, 1).' MB';
-	elseif($file >= $gb && $file < $tb) $size = round($file/$gb, 1).' GB';
+	elseif($file >= $mb && $file < $gb) $size = round($file/$mb, 1).' Mb';
+	elseif($file >= $gb && $file < $tb) $size = round($file/$gb, 1).' Gb';
 	elseif($file >= $tb) $size = round($file/$tb, 1).'TB';
 	else
 	{
