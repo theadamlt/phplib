@@ -66,8 +66,7 @@ function mysql_enteries_fix_string($string) {
 
 function odd_or_even($num)
 {
-	if($odd = $num%2 ) return(0); //Odd number
-	else return(1); //Even number
+	return ($num%2); // Returns 0 for odd and 1 for even
 }
 
 function detect_browser()
