@@ -215,4 +215,78 @@ function calc_file_size($file)
 	}
 	return $size;
 }
+
+
+/**
+* Converts number to roman numberer
+*@param Number {number} The number to convert
+*@return {string} The number converted to roman number
+*/
+function roman_numerals($num){
+    $n = intval($num);
+    $res = '';
+
+    /*** roman_numerals array  ***/
+    $roman_numerals = array(
+        'M'  => 1000,
+        'CM' => 900,
+        'D'  => 500,
+        'CD' => 400,
+        'C'  => 100,
+        'XC' => 90,
+        'L'  => 50,
+        'XL' => 40,
+        'X'  => 10,
+        'IX' => 9,
+        'V'  => 5,
+        'IV' => 4,
+        'I'  => 1);
+
+    foreach ($roman_numerals as $roman => $number){
+        /*** divide to get  matches ***/
+        $matches = intval($n / $number);
+
+        /*** assign the roman char * $matches ***/
+        $res .= str_repeat($roman, $matches);
+
+        /*** substract from the number ***/
+        $n = $n % $number;
+    }
+
+    /*** return the res ***/
+    return $res;
+}
+
+
+/**
+* Generates random string
+*@param length {number} The length of the string
+*@return {string} The random generated string
+*/
+function gen_random_string($len) {
+	$symbols = array();
+	$string = '';
+
+	foreach (range('A', 'Z') as $value) {
+		$symbols[] = $value;
+	}
+
+	foreach (range('a', 'z') as $value) {
+		$symbols[] = $value;
+	}
+
+	foreach (range(1, 9) as $value) {
+		$symbols[] = $value;
+	}
+
+	for ($i=0; $i < $len; $i++) { 
+		$rand = rand(0, 60);
+		$string .=$symbols[$rand];
+	}
+
+	return $string;
+
+}
+
+
 ?>
